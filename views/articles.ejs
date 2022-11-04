@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creando Articulos</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+	<div class="app">
+		<h1>configura tus articulos</h1>
+		<hr>
+		<div class="form">
+			<form action="/" method="POST" enctype="multipart/form-data">
+				<div class="article-label">
+					<label for="name">Nombre de el producto</label>
+					<input type="text" id="name" placeholder="Name"
+						value="" name="name" required>
+				</div>	
+				<div class="article-label">
+					<label for="desc">Descripcion del producto</label>
+					<textarea id="desc" name="desc" value=""
+							placeholder="Description" required>
+					</textarea>
+				</div>
+				<div class="article-label">
+					<label for="price">Precio del producto</label>
+					<input type="text" id="price" placeholder="price"
+					value="" name="price" required>
+				</div>
+				<div class="article-label">
+					<label for="color">Color del producto</label>
+					<input type="text" id="color" placeholder="color"
+					value="" name="color" required>
+				</div>
+				<div class="article-label">
+					<label for="image">Upload Image</label>
+					<input type="file" id="image"
+						name="image" value="" required>
+				</div>
+				<div class="article-label">
+					<button type="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+	
+		<hr>
+	
+		<h1>Uploaded Images</h1>
+		<div>
+			<% items.forEach(function(image) { %>
+			<div>
+				<div class="article">
+					<h1><%= image.name %></h1>
+					<h2><%= image.desc%></h2>
+					<h2><%= image.price%></h2>
+					<h2><%= image.color%></h2>
+					<img class="article-image"src="data:image/<%=image.image.contentType%>;base64,
+						<%=image.image.data.toString('base64')%>">
+					<div>
+	
+	
+	
+					</div>
+				</div>
+			</div>
+			<% }) %>
+		</div>
+	</div>
+</body>
+ 
+</html>
