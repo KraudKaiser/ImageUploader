@@ -68,6 +68,10 @@
 	border-radius: 0.5em;
 }
 
+.article-submit button:hover{
+	cursor: pointer;
+}
+
 .products{
 	display: flex;
 	flex-direction: column;
@@ -84,6 +88,10 @@
 	margin: 10px 10px 10px 10px;
 	padding: 10px;
 	box-sizing: content-box;
+}
+
+.card:hover{
+	cursor: pointer;
 }
 
 .card .card-image{
